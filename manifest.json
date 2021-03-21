@@ -1,8 +1,8 @@
 {
   "Actions": [
     {
-      "Icon": "images/actionIcon",
-      "Name": "StreamDeckAzureDevopsAction",
+      "Icon": "images/adoIcon",
+      "Name": "Release Pipeline Status",
       "States": [
         {
           "Image": "images/actionDefaultImage",
@@ -11,21 +11,21 @@
         }
       ],
       "SupportedInMultiActions": false,
-      "Tooltip": "The first action for the StreamDeckAzureDevops Stream Deck plugin",
-      "UUID": "com.iamdavidfrancis.streamdeckado.DefaultPluginAction"
+      "Tooltip": "Pipeline status from ADO.",
+      "UUID": "com.iamdavidfrancis.streamdeckado.pipelinestatus"
     }
   ],
-	"Category": "Your Plugin Category",
-	"CategoryIcon": "images/category/categoryIcon",
+	"Category": "Azure DevOps Tools",
+	"CategoryIcon": "images/category/adoIcon",
 	"Disabled":  false,
-	"Author": "Your Name",
+	"Author": "David Francis",
 	"CodePathWin": "StreamDeckAzureDevOps.exe",
 	"CodePathMac":  "StreamDeckAzureDevOps",
   "PropertyInspectorPath": "property_inspector/property_inspector.html",
-  "Description": "Description of StreamDeckAzureDevops.",
-  "Name": "StreamDeckAzureDevops",
-  "Icon": "images/pluginIcon",
-  "URL": "https://www.elgato.com/gaming/stream-deck",
+  "Description": "ADO Productivity Tools",
+  "Name": "Azure DevOps Tools",
+  "Icon": "images/adoIcon",
+  "URL": "https://github.com/iamdavidfrancis/stream-deck-ado-tools",
   "Version": "1.0",
 	"SDKVersion": 2,
 	"Software": {

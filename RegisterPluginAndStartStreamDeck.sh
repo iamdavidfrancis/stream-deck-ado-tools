@@ -10,7 +10,7 @@ pkill 'Stream Deck'
 uuid=$(sed -n 's/.*"UUID": "\(.*\)"/\1/p' manifest.json)
 
 # Pull the plugin name from the UUID
-pluginName=${uuid%.*}
+pluginName="com.iamdavidfrancis.streamdeckado"
 
 # Set the plugins and project directories to a variable
 pluginsDir="$HOME/Library/Application Support/com.elgato.StreamDeck/Plugins"

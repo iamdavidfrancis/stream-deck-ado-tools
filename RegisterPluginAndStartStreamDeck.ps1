@@ -20,10 +20,12 @@ $buildConfiguration = "Debug"
 $targetFrameworkName = $projectXML.Project.PropertyGroup.TargetFramework;
 
 # Set local path references
-$streamDeckExePath = "$($ENV:ProgramFiles)\Elgato\StreamDeck\StreamDeck.exe"
+$streamDeckExePath = "C:\Program Files\Elgato\StreamDeck\StreamDeck.exe"
+
+Write-Host $streamDeckExePath
 
 # For now, this PS script will only be run on Windows.
-$bindir = "$basePath\bin\Debug\$targetFrameworkName\win-x64"
+$bindir = "$basePath\bin\$buildConfiguration\$targetFrameworkName\win-x64"
 
 # Make sure we actually have a directory/build to deploy
 If (-not (Test-Path $bindir)) {
@@ -36,9 +38,7 @@ $manifestFile = $bindir +"\manifest.json"
 $manifestContent = Get-Content $manifestFile | Out-String
 $json = ConvertFrom-JSON $manifestcontent
 
-$uuidAction = $json.Actions[0].UUID
-
-$pluginID = $uuidAction.substring(0, $uuidAction.Length - ".action".Length)
+$pluginID = "com.iamdavidfrancis.streamdeckado";
 $destDir = "$($env:APPDATA)\Elgato\StreamDeck\Plugins\$pluginID.sdPlugin"
 
 $pluginName = Split-Path $basePath -leaf
