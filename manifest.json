@@ -15,30 +15,31 @@
       "UUID": "com.iamdavidfrancis.streamdeckado.pipelinestatus"
     }
   ],
-	"Category": "Azure DevOps Tools",
-	"CategoryIcon": "images/category/adoIcon",
-	"Disabled":  false,
-	"Author": "David Francis",
-	"CodePathWin": "StreamDeckAzureDevOps.exe",
-	"CodePathMac":  "StreamDeckAzureDevOps",
+  "Category": "Azure DevOps Tools",
+  "CategoryIcon": "images/category/adoIcon",
+  "Disabled": false,
+  "Author": "David Francis",
+  "CodePath": "StreamDeckAzureDevOps.exe",
+  "CodePathWin": "StreamDeckAzureDevOps.exe",
+  "CodePathMac": "StreamDeckAzureDevOps",
   "PropertyInspectorPath": "property_inspector/property_inspector.html",
   "Description": "ADO Productivity Tools",
   "Name": "Azure DevOps Tools",
   "Icon": "images/adoIcon",
   "URL": "https://github.com/iamdavidfrancis/stream-deck-ado-tools",
   "Version": "1.0",
-	"SDKVersion": 2,
-	"Software": {
-		"MinimumVersion":  "4.1"
-	},
-	"OS": [
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "4.1"
+  },
+  "OS": [
     {
-        "Platform": "mac",
-        "MinimumVersion" : "10.11"
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
     },
     {
-        "Platform": "windows",
-        "MinimumVersion" : "10"
+      "Platform": "windows",
+      "MinimumVersion": "10"
     }
   ]
 }
