@@ -12,7 +12,7 @@ pool:
 
 steps:
 - task: DotNetCoreCLI@2
-  displayName: Publish win10-x64
+  displayName: dotnet publish win10-x64
   inputs:
     command: 'publish'
     publishWebProjects: false
@@ -21,7 +21,7 @@ steps:
     zipAfterPublish: false
     modifyOutputPath: false
 - task: DotNetCoreCLI@2
-  displayName: Publish osx-x64
+  displayName: dotnet publish osx-x64
   inputs:
     command: 'publish'
     publishWebProjects: false
