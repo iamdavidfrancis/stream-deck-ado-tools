@@ -2,7 +2,7 @@
   "Actions": [
     {
       "Icon": "images/adoIcon",
-      "Name": "Release Pipeline Status",
+      "Name": "Release Stage Status",
       "States": [
         {
           "Image": "images/actionDefaultImage",
@@ -11,7 +11,7 @@
         }
       ],
       "SupportedInMultiActions": false,
-      "Tooltip": "Pipeline status from ADO.",
+      "Tooltip": "Release stage status from ADO.",
       "UUID": "com.iamdavidfrancis.streamdeckado.pipelinestatus"
     }
   ],
