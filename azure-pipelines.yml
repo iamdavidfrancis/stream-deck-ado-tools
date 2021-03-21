@@ -12,6 +12,7 @@ pool:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: Publish win10-x64
   inputs:
     command: 'publish'
     publishWebProjects: false
@@ -20,31 +21,37 @@ steps:
     zipAfterPublish: false
     modifyOutputPath: false
 - task: DotNetCoreCLI@2
+  displayName: Publish osx-x64
   inputs:
     command: 'publish'
     publishWebProjects: false
     projects: 'StreamDeckAzureDevOps.csproj'
-    arguments: '-c Release -r osx-x64 /p:PublishSingleFile=true -o $(releasePath) --self-contained true -p:PublishReadyToRun=true'
+    arguments: '-c Release -r osx-x64 /p:PublishSingleFile=true -o $(releasePath) --self-contained true'
 - task: CopyFiles@2
+  displayName: Copy images
   inputs:
     SourceFolder: 'images'
     Contents: '**'
     TargetFolder: '$(releasePath)/images'
 - task: CopyFiles@2
+  displayName: Copy property_inspector
   inputs:
     SourceFolder: 'property_inspector'
     Contents: '**'
     TargetFolder: '$(releasePath)/property_inspector'
 - task: CopyFiles@2
+  displayName: Copy manifest.json
   inputs:
     SourceFolder: ''
     Contents: 'manifest.json'
     TargetFolder: '$(releasePath)'
 - task: PowerShell@2
+  displayName: Package sdPlugin
   inputs:
     targetType: 'inline'
     script: '.\DistributionTool.exe -b -i ".\Release\com.iamdavidfrancis.streamdeckado.sdPlugin" -o $env:PublishDir'
 - task: PublishPipelineArtifact@1
+  displayName: Publish artifact
   inputs:
     targetPath: '$(Build.ArtifactStagingDirectory)/com.iamdavidfrancis.streamdeckado.streamDeckPlugin'
     artifact: 'Build output'
