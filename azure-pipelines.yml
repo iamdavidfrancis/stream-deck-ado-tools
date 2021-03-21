@@ -49,7 +49,7 @@ steps:
   displayName: Package sdPlugin
   inputs:
     targetType: 'inline'
-    script: '.\DistributionTool.exe -b -i ".\Release\com.iamdavidfrancis.streamdeckado.sdPlugin" -o $env:PublishDir'
+    script: '.\DistributionTool.exe -b -i ".\Release\com.iamdavidfrancis.streamdeckado.sdPlugin" -o $env:RELEASEPATH'
 - task: PublishPipelineArtifact@1
   displayName: Publish artifact
   inputs:
