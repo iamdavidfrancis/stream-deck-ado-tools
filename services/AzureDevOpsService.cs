@@ -107,7 +107,7 @@ namespace StreamDeckAzureDevOps.Services
                     latestAttemptsOnly: true,
                     top: 10);
 
-                deployment = releases?.FirstOrDefault();
+                deployment = releases?.FirstOrDefault(r => r.DeploymentStatus != DeploymentStatus.NotDeployed);
             }
 
             return GetStatusImage(deployment);
