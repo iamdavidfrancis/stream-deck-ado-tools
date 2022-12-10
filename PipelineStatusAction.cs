@@ -4,7 +4,7 @@ using StreamDeckLib;
 using StreamDeckLib.Messages;
 using System.Threading.Tasks;
 using System.Timers;
-using StreamDeckAzureDevOps.Services.ResponseModels;
+using Microsoft.VisualStudio.Services.ReleaseManagement.WebApi;
 
 namespace StreamDeckAzureDevOps
 {
@@ -68,16 +68,16 @@ namespace StreamDeckAzureDevOps
             {
                 switch (resp.DeploymentStatus)
                 {
-                    case ReleaseEnvironmentStatus.Succeeded:
+                    case DeploymentStatus.Succeeded:
                         await Manager.SetImageAsync(args.context, "images/success@2x.png");
                         break;
-                    case ReleaseEnvironmentStatus.Failed:
+                    case DeploymentStatus.Failed:
                         await Manager.SetImageAsync(args.context, "images/fail@2x.png");
                         break;
-                    case ReleaseEnvironmentStatus.InProgress:
+                    case DeploymentStatus.InProgress:
                         await Manager.SetImageAsync(args.context, "images/inProgress@2x.png");
                         break;
-                    case ReleaseEnvironmentStatus.PartiallySucceeded:
+                    case DeploymentStatus.PartiallySucceeded:
                         await Manager.SetImageAsync(args.context, "images/partial@2x.png");
                         break;
                     default:
