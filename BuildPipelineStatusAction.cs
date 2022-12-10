@@ -7,8 +7,8 @@ using System.Timers;
 
 namespace StreamDeckAzureDevOps
 {
-    [ActionUuid(Uuid = "com.iamdavidfrancis.streamdeckado.pipelinestatus")]
-    public class PipelineStatusAction : BaseStreamDeckActionWithSettingsModel<AdoPipelineSettingsModel>
+    [ActionUuid(Uuid = "com.iamdavidfrancis.streamdeckado.buildpipelinestatus")]
+    public class BuildPipelineStatusAction : BaseStreamDeckActionWithSettingsModel<AdoBuildSettingsModel>
     {
         private AzureDevOpsService azureDevOpsService;
         private Timer timer;
@@ -61,8 +61,12 @@ namespace StreamDeckAzureDevOps
 
         private async Task FetchLatestInfo(StreamDeckEventPayload args)
         {
-            var resp = await this.azureDevOpsService.GetReleaseStageInformation(SettingsModel);
+            var resp = await this.azureDevOpsService.GetBuildStatusInformation(SettingsModel);
             await Manager.SetImageAsync(args.context, resp);
+
+#if DEBUG
+            await Manager.LogMessageAsync(args.context, resp);
+#endif
         }
     }
 }

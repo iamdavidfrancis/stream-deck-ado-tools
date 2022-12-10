@@ -12,7 +12,23 @@
       ],
       "SupportedInMultiActions": false,
       "Tooltip": "Release stage status from ADO.",
-      "UUID": "com.iamdavidfrancis.streamdeckado.pipelinestatus"
+      "UUID": "com.iamdavidfrancis.streamdeckado.pipelinestatus",
+      "PropertyInspectorPath": "property_inspector/property_inspector.html"
+    },
+    {
+      "Icon": "images/adoIcon",
+      "Name": "Build Pipeline Status",
+      "States": [
+        {
+          "Image": "images/actionDefaultImage",
+          "TitleAlignment": "middle",
+          "FontSize": "16"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Pipeline stage status from ADO.",
+      "UUID": "com.iamdavidfrancis.streamdeckado.buildpipelinestatus",
+      "PropertyInspectorPath": "property_inspector/property_inspector_build.html"
     }
   ],
   "Category": "Azure DevOps Tools",
@@ -22,7 +38,6 @@
   "CodePath": "StreamDeckAzureDevOps.exe",
   "CodePathWin": "StreamDeckAzureDevOps.exe",
   "CodePathMac": "StreamDeckAzureDevOps",
-  "PropertyInspectorPath": "property_inspector/property_inspector.html",
   "Description": "ADO Productivity Tools",
   "Name": "Azure DevOps Tools",
   "Icon": "images/adoIcon",

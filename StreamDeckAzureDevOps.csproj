@@ -17,22 +17,17 @@
 		<Exec Command="powershell -ExecutionPolicy Unrestricted -file &quot;$(ProjectDir)RegisterPluginAndStartStreamDeck.ps1&quot;" />
 	</Target>
 	<ItemGroup>
-	  <None Remove="images\adoIcon.png" />
-	  <None Remove="images\adoIcon@2x.png" />
-	  <None Remove="images\category\adoIcon%402x.png" />
-	  <None Remove="images\category\adoIcon.png" />
-	  <None Remove="images\fail%402x.png" />
-	  <None Remove="images\fail.png" />
-	  <None Remove="images\inProgress%402x.png" />
-	  <None Remove="images\inProgress.png" />
-	  <None Remove="images\partial%402x.png" />
-	  <None Remove="images\partial.png" />
-	  <None Remove="images\success%402x.png" />
-	  <None Remove="images\success.png" />
+		<None Remove="images\*" />
+		<None Remove="images\**\*" />
+		<None Remove="property_inspector\*" />
+		<None Remove="property_inspector\**\*" />
 	</ItemGroup>
 
 	<!--Dependencies-->
 	<ItemGroup>
+		<PackageReference Include="Microsoft.TeamFoundationServer.Client" Version="16.170.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Services.Client" Version="16.170.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Services.Release.Client" Version="16.170.0" />
 		<PackageReference Include="StreamDeckLib" Version="0.*" />
 		<PackageReference Include="StreamDeckLib.Config" Version="0.*" />
 		<PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.3" />
@@ -49,41 +44,11 @@
 
 	<!--Deployment files that must go with the build executable -->
 	<ItemGroup>
-		<Content Include="images\adoIcon.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		<Content Include="images\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="images\adoIcon@2x.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="images\category\adoIcon.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="images\category\adoIcon@2x.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="images\fail.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="images\fail@2x.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="images\inProgress.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="images\inProgress@2x.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="images\partial.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="images\partial@2x.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="images\success.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="images\success@2x.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		<Content Include="images\**\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="manifest.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -93,31 +58,15 @@
 		</Content>
 	</ItemGroup>
 
-	<!-- Images that must be deployed with the executable -->
-	<ItemGroup>
-		<Content Include="images/actionDefaultImage.png">
-				<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="images/actionDefaultImage@2x.png">
-				<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-	</ItemGroup>
 
 	<!-- Property Inspector Files -->
 	<ItemGroup>
-		<Content Include="property_inspector\css\property-inspector.css">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		<Content Include="property_inspector\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="property_inspector\css\sdpi.css">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		<Content Include="property_inspector\**\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="property_inspector\js\property-inspector.js">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="property_inspector\property_inspector.html">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-
 	</ItemGroup>
 
 	<!-- Build Helper -->

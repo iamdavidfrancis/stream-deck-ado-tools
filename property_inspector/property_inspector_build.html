@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>StreamDeckAzureDevops Property Inspector</title>
+    <link rel="stylesheet" href="css/sdpi.css">
+    <link rel="stylesheet" href="css/property-inspector.css">
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <!-- for more examples of the types of fields supported in property inspector visit:
+            Elgato Github PiSamples -> https://github.com/elgatosf/streamdeck-pisamples
+            and
+            Elgato SDK Documentation -> https://developer.elgato.com/documentation/stream-deck/sdk/property-inspector/
+    -->
+
+        <div class="sdpi-item" id="organization_value">
+            <div class="sdpi-item-label">Organization Name</div>
+            <input id="txtOrganizationValue" class="sdpi-item-value" type="text" placeholder="Enter organization name" onchange="setSettings(event.target.value, 'Organization')" />
+        </div>
+
+        <div class="sdpi-item" id="project_value">
+            <div class="sdpi-item-label">Project Name</div>
+            <input id="txtProjectValue" class="sdpi-item-value" type="text" placeholder="Enter project name" onchange="setSettings(event.target.value, 'Project')" />
+        </div>
+
+        <div class="sdpi-item" id="user_value">
+            <div class="sdpi-item-label">Username</div>
+            <input id="txtUserValue" class="sdpi-item-value" type="text" placeholder="Enter username" onchange="setSettings(event.target.value, 'Username')" />
+        </div>
+
+        <div class="sdpi-item" id="pat_value">
+            <div class="sdpi-item-label">PAT</div>
+            <input id="txtPATValue" class="sdpi-item-value" type="password" placeholder="Enter Personal Access Token" onchange="setSettings(event.target.value, 'PAT')" />
+        </div>
+
+        <div class="sdpi-item" id="releasedefid_value">
+            <div class="sdpi-item-label">Build Definition Id</div>
+            <input id="txtReleaseDefValue" class="sdpi-item-value" type="number" placeholder="Enter Release Definition Id" inputmode="numeric" pattern="[0-9]*" onchange="setSettings(event.target.value, 'DefinitionId')" />
+        </div>
+
+        <div class="sdpi-item" id="releasedefid_value">
+            <div class="sdpi-item-label">Branch Name</div>
+            <input id="txtBranchName" class="sdpi-item-value" type="text" placeholder="Enter Branch Name" onchange="setSettings(event.target.value, 'BranchName')" />
+        </div>
+    </div>
+    <script src="js/property-inspector-build.js"></script>
+</body>
+</html>
